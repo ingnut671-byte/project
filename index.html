@@ -1,28 +1,9 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kandinsky Circles — hand-drawn sound</title>
-  <link rel="stylesheet" href="style.css">
-
-  <!-- p5.js + p5.sound (version pinned so the class always gets the same code) -->
-  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/addons/p5.sound.min.js"></script>
-  <!-- MediaPipe is loaded from inside sketch.js (it is an ES module) -->
-  <script src="sketch.js"></script>
-</head>
-<body>
-  <div id="intro">
-    <h1>Several Circles</h1>
-    <p>After Wassily Kandinsky, 1926</p>
-    <ul>
-      <li><b>Pinch</b> thumb + index finger and hold → a circle grows</li>
-      <li><b>Release</b> → the circle is placed and rings like a bell</li>
-      <li>Keys: <kbd>C</kbd> clear · <kbd>S</kbd> save image · <kbd>V</kbd> show camera</li>
-    </ul>
-    <button id="start">Start camera + sound</button>
-  </div>
-  <div id="status"></div>
-</body>
-</html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>几何共鸣 · 三种手势</title><link rel="stylesheet" href="style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/addons/p5.sound.min.js"></script>
+<script defer src="sketch.js"></script></head><body>
+<section id="intro"><div class="intro-copy"><p class="eyebrow">KANDINSKY / CELESTIAL STUDY</p><h1>几何共鸣<span>让指尖，划过星夜。</span></h1><p>圆形与三角交叠，流星沿指尖轻轻划过。<br>握拳选圆形，剪刀手选三角，食指画曲线。<br>随机星光礼包飘落，靠近领取，让爱心散开。</p><div class="actions"><button id="start">启动摄像头与声音</button><button id="mouse-start" class="secondary">先用鼠标试画</button></div><p id="boot">请选择一种方式开始 · 摄像头模式需允许访问摄像头</p></div></section>
+<nav id="tools" hidden aria-label="绘画工具"><div class="brand">几何共鸣 <small>CELESTIAL STUDY</small></div><div class="buttons"><button data-brush="circle" aria-pressed="true">✊ 圆形 <kbd>1</kbd></button><button data-brush="triangle" aria-pressed="false">✌ 三角 <kbd>2</kbd></button><button data-brush="curve" aria-pressed="false">☝ 流星曲线 <kbd>3</kbd></button><span class="divider"></span><button id="undo">撤销 Z</button><button id="clear">清空 C</button><button id="save">保存 S</button><button id="gifts">礼包：开</button><button id="camera">摄像头 V</button><button id="mouse-mode">鼠标试画</button></div><p class="hint">当前：<b id="brush-label">圆形</b> · <span id="count">0</span> 个图形 · 随机多色<br>✊ / ✌ 保持约半秒选择 → 张开手 → 捏合变大、松开固定。<br>☝ 食指伸出约半秒开始画曲线，收起结束。识别：<b id="gesture-label">—</b></p></nav>
+<div id="status" role="status" aria-live="polite"></div>
+<script>window.addEventListener('load',()=>{if(typeof p5==='undefined'||typeof p5.Oscillator==='undefined')document.getElementById('boot').textContent='绘图库加载失败，请检查网络后刷新。需要访问 cdn.jsdelivr.net。';});</script></body></html>
