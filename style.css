@@ -1,0 +1,79 @@
+/* Full-screen canvas, no scrollbars */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #0c1226;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #f1ead8;
+}
+
+canvas {
+  display: block;
+}
+
+/* Start screen — browsers only allow camera + sound after a click */
+#intro {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(circle at 50% 40%, #1d2a55 0%, #0c1226 70%);
+  z-index: 10;
+  padding: 16px;
+}
+
+#intro h1 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+#intro p {
+  margin: 4px 0 24px;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+#intro ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  line-height: 1.9;
+}
+
+kbd {
+  border: 1px solid #f1ead8;
+  border-radius: 4px;
+  padding: 0 6px;
+  font-size: 0.85em;
+}
+
+#start {
+  font-size: 1.1rem;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 999px;
+  background: #e9c46a;
+  color: #0c1226;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#start:hover {
+  background: #f4a261;
+}
+
+/* Small status line in the corner */
+#status {
+  position: fixed;
+  left: 16px;
+  bottom: 12px;
+  font-size: 0.85rem;
+  opacity: 0.75;
+  pointer-events: none;
+  max-width: calc(100vw - 32px);
+}

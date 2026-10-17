@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kandinsky Circles — hand-drawn sound</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- p5.js + p5.sound (version pinned so the class always gets the same code) -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/addons/p5.sound.min.js"></script>
+  <!-- MediaPipe is loaded from inside sketch.js (it is an ES module) -->
+  <script src="sketch.js"></script>
+</head>
+<body>
+  <div id="intro">
+    <h1>Several Circles</h1>
+    <p>After Wassily Kandinsky, 1926</p>
+    <ul>
+      <li><b>Pinch</b> thumb + index finger and hold → a circle grows</li>
+      <li><b>Release</b> → the circle is placed and rings like a bell</li>
+      <li>Keys: <kbd>C</kbd> clear · <kbd>S</kbd> save image · <kbd>V</kbd> show camera</li>
+    </ul>
+    <button id="start">Start camera + sound</button>
+  </div>
+  <div id="status"></div>
+</body>
+</html>
